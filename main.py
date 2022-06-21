@@ -1,10 +1,11 @@
+# This Python file uses the following encoding: utf-8
 import os
 import codecs
 import stanza
 import re
 from indicnlp.tokenize import sentence_tokenize
 
-path =r"/home/kanda/IISc_Internship/Trial"
+path =r"C:\Users\Sanchit Kanda\Desktop\IISc_Internship\Project-1"
 os.chdir(path)
 
 def read_files(file_path):
@@ -28,22 +29,22 @@ pattern_required="\D*\d+[.,:-]?\d*[.,:-]?\d*"
 
 
 #files name
-file_date = open("keep/date.txt", "a")
-file_amount=open("keep/amount.txt",'a')
-file_amountPro=open("keep/amountPro.txt",'a') 
+file_date = open("Results/date.txt", "a", encoding='utf8')
+file_amount=open("Results/amount.txt",'a', encoding='utf8')
+file_amountPro=open("Results/amountPro.txt",'a', encoding='utf8') 
 # Above file contains those numbers that can be correctly pronounced according to as they are written
-file_dateWords=open("keep/dateWords.txt",'a')
+file_dateWords=open("Results/dateWords.txt",'a', encoding='utf8')
 # Above file contains the words that are associated with dates, months, years, etc
-file_phone=open("keep/phoneContent.txt",'a')
-file_time=open("keep/time.txt",'a')
+file_phone=open("Results/phoneContent.txt",'a', encoding='utf8')
+file_time=open("Results/time.txt",'a', encoding='utf8')
 # Above file contains the words that are associated with dates, months, years, etc
-file_rest=open("keep/rest.txt",'a')
-file_num=open("keep/num.txt",'a')
-file_ratio=open("keep/ratioContent.txt","a")
-# file_share=open("keep/share.txt",'a')
-file_year=open("keep/year.txt",'a')
-file_train=open("keep/train.txt",'a')
-# Above file keeps the sentence having words synonyms with share market
+file_rest=open("Results/rest.txt",'a', encoding='utf8')
+file_num=open("Results/num.txt",'a', encoding='utf8')
+file_ratio=open("Results/ratioContent.txt","a", encoding='utf8')
+# file_share=open("Results/share.txt",'a')
+file_year=open("Results/year.txt",'a', encoding='utf8')
+file_train=open("Results/train.txt",'a', encoding='utf8')
+# Above file results the sentence having words synonyms with share market
 
 
 
@@ -74,9 +75,11 @@ train_words=['एक्सप्रेस']
 gaadi="गाड़ी" 
 sankhya="संख्या"
 
-for file in os.listdir(path):
+path=path+'\Dataset'
+os.chdir(path)
+for file in os.listdir():
    if file.endswith('.txt'):
-    file_path ='/home/kanda/IISc_Internship/Trial/'+str(file)
+    file_path =r'C:\Users\Sanchit Kanda\Desktop\IISc_Internship\Project-1\Dataset\\'+str(file)
     indic_string=read_files(file_path)
     sentences=sentence_tokenize.sentence_split(indic_string, lang='hi')
     for sentence in sentences:
