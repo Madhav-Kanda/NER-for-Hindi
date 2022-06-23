@@ -48,7 +48,7 @@ pattern_required="\D*\d+[.,:-]?\d*[.,:-]?\d*"
 # file_train=open("Results/train.txt",'a', encoding='utf8')
 
 
-file_results=open("New_Results/results.txt", "a", encoding='utf8')
+file_results=open("Tagging_Results/results.txt", "a", encoding='utf8')
 # Above file results the sentence having words synonyms with share market
 
 
